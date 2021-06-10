@@ -1,0 +1,34 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Election</title>
+    <link rel="stylesheet" href="{% static 'css/createNew.css' %}?">
+</head>
+
+<body>
+
+    <div class="outer">
+        <!-- <div class="main"> -->
+        <div class="heading">New Election</div>
+        <div class="form-section">
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                <div class="btns">
+                    <input class="btn reset-btn" type="reset">
+                    <input class="btn submit-btn" type="submit" value="POST">
+                </div>
+            </form>
+        </div>
+        <!-- </div> -->
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background: #C4C4C4;
+}
+.outer{
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+.main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.last-election-winner{
+    /* background: red; */
+    width: 100%;
+    border: 1px solid black;
+    background: white;
+}
+.last-election-winner h2{
+    /* background: gray; */
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+}
+hr{
+    width: 100%;
+    background: black;
+}
+.info{
+    /* background: green; */
+    width: 100%;
+    padding: 8px;
+}
+.info div{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.info div span{
+    text-align: center;
+    color: rgb(20, 20, 20);
+}
+
+.histroy-section{
+    width: 100%;
+    margin-top: 15px;
+}
+.histroy-section .heading{
+    width: 100%;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-top: 5px;
+}
+table{
+    background: #C4C4C4;
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    border-spacing: 0;
+    border: 1px solid black;
+}
+table tr th{
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+table tr td{
+    text-align: center;
+    padding: 10px;
+    background: white;
+    font-weight: bold;
+}
+
+@media screen and (min-width:768px){
+    .main{
+        width: 70%;
+    }
+}

@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static '/css/voterRegister.css' %}">
+</head>
+
+<body>
+    <div class="outer">
+        <div class="heading">Registration</div>
+        <div class="form-section">
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                <div class="btns">
+                    <input type="reset" class="btn reset-btn">
+                    <input class="btn sign-up-btn" type="submit" name="Register" id="" value="sign up">
+                </div>
+            </form>
+            <div class="messages-section">
+                <div class="error-message">{{message2}}</div>
+                <div class="info-message">
+                    <p class="message">{{message1}}</p>
+                    Please note it somewhere..
+                </div>
+            </div>
+        </div>
+        <a class=" btn sign-in-btn" href="{% url 'login' %}">log in</a>
+    </div>
+
+    <script src="{% static 'js/voterRegister.js' %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/dashboardVoter.css' %}">
+</head>
+
+<body>
+    <div class="flex">
+        <div class="main">
+            <div class="first">
+                <div class="left"><img src="{% static 'images/slogan_awareVoting.jpg' %}" alt=""></div>
+                <div class="right">
+                    <div class="title">Election Commision of INDIA</div>
+                    <div class="info">
+                        <div class="profile-img">
+                            <img src="{% static 'images/login_avatar.svg' %}" alt="">
+                        </div>
+                        <div class="voter-info">
+                            <p>
+                                <span>Name: </span>{{voter.name}} <br>
+                                <span>Father's Name: </span>{{voter.father_name}} <br>
+                                <span>Gender: </span>{{voter.gender}} <br>
+                                <span>Date Of Birth: </span>{{voter.date_of_birth}} <br>
+                                <span>Voter-id: </span>{{voter.voter_id}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="logout">
+                        <a href="{% url 'login' %}">
+                            <button>LOG OUT</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="second"><a href="{% url 'winner' voter_region %}">winner</a></div>
+
+            <div class="third">
+                <div class="upper">{{message}}</div>
+                <div class="hr-line"></div>
+                <div class="lower">
+                    <div>Election started on- <span>{{date_created}}</span></div>
+                    <div>Start Time- <span>{{start_time}}</span></div>
+                    <div>End Time- <span>{{end_time}}</span></div>
+                </div>
+                <div class="can_vote">{{can_vote}}</div>
+            </div>
+
+            <div class="fourth">
+                <div class="heading">All Candidates</div>
+
+                <div class="candidates">
+                    {% for candidate in election_candidates %}
+                    <div class="element">
+                        <div class="vote">
+                            <div>{{candidate}}</div>
+                            <div>{{candidate.party_name}}</div>
+                            <div>
+                                <button class="vote-btn">vote</button>
+                            </div>
+                        </div>
+                        <div class="popup">
+                            <div class="conf-yes btn"><a
+                                    href="{% url 'verifyVote' id election_id candidate.candidate_id '1' %}">YES</a>
+                            </div>
+                            <div class="conf-no btn"><a href="{% url 'dashboardVoter' id %}">NO</a></div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static '/js/dashboardVoter.js' %}"></script>
+</body>
+
+</html>

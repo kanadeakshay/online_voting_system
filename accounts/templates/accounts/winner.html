@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winner</title>
+    <link rel="stylesheet" href="{% static 'css/winner.css' %}?">
+</head>
+
+<body>
+
+    <div class="outer">
+        <div class="main">
+            <div class="last-election-winner">
+                <h2>Winner of last election</h2>
+                <hr>
+                <div class="info">
+                    <div id="winner_name">Winner name- <span id="name">{{winner_name}}</span></div>
+                    <div id="winner_votes">Winner votes- <span id="votes">{{winner_votes}}</span></div>
+                    <div id="winner_party">Winner party- <span id="party">{{winner_party}}</span></div>
+                    <div id="winner_id">Winner-id- <span id="id">{{winner_id}}</span></div>
+                    <div id="last_date">Last election date- <span id="id">{{last_election_date}}</span></div>
+                </div>
+            </div>
+
+            <div class="histroy-section">
+                <div class="heading">Previous winners</div>
+                <table>
+                    <tr>
+                        <th>Election Date</th>
+                        <th>winner party</th>
+                        <th>winner name</th>
+                        <th>winner votes</th>
+                        <!-- <th>party name</th> -->
+                    </tr>
+                    {% for winner in previous_winners %}
+                    <tr>
+                        <td>{{winner.date_created}}</td>
+                        <td>{{winner.winner_party}}</td>
+                        <td>{{winner.winner_name}}</td>
+                        <td>{{winner.votes}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/winner.js' %}"></script>
+</body>
+
+</html>

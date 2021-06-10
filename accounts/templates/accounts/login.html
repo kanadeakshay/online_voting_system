@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static '/css/login.css' %}">
+</head>
+
+<body>
+    <!-- background img -->
+    <img class="bg-graphic" src="{% static '/images/login_background.png' %}">
+    <!-- end of background img -->
+
+    <div class="container">
+        <!-- side graphic -->
+        <div class="side-graphic">
+            <img src="{% static '/images/electionDay_graphic.svg' %}">
+        </div>
+        <!-- end of voter form -->
+
+        <div class="login-content">
+            <!-- voter form -->
+            <form class="voter-form" action="{% url 'voterLogin' %}" method="POST">
+
+                {% csrf_token %}
+
+                <img class="avatar" src="{% static '/images/login_avatar.svg' %}">
+                <h2 class="title">Welcome</h2>
+                <p class="error-message">{{messageV}}</p>
+                <div class="input-div one">
+                    <div class="i">
+                        <img class="icon" src="{% static '/images/user.svg' %}" alt="">
+                    </div>
+                    <div class="div">
+                        <h5>Voter id</h5>
+                        <input type="text" class="input" name="id">
+                    </div>
+                </div>
+                <div class="input-div pass">
+                    <div class="i">
+                        <img class="icon" src="{% static '/images/lock.svg' %}" alt="">
+                    </div>
+                    <div class="div">
+                        <h5>Password</h5>
+                        <input type="password" class="input" name="password">
+                    </div>
+                </div>
+                <input type="submit" class="btn" value="Login">
+                <br>
+                <a style="color: black;
+                        text-align: center;
+                        font-size: 1rem;
+                        text-transform: capitalize;" class="me" id="hi" href="{% url 'voterRegister' %}">
+                    don't have a voter id? create one &rarr;
+                </a>
+                <br>
+                <span class="admin-link">Login as admin</span>
+            </form>
+            <!-- end of voter form -->
+
+            <!-- admin form -->
+            <form class="admin-form" action="{% url 'adminLogin' %}" method="POST">
+
+                {% csrf_token %}
+
+                <img class="avatar" src="{% static '/images/login_avatar.svg' %}">
+                <h2 class="title">Welcome</h2>
+                <p class="error-message">{{messageA}}</p>
+                <div class="input-div one">
+                    <div class="i">
+                        <img class="icon" src="{% static '/images/user.svg' %}" alt="">
+                    </div>
+                    <div class="div">
+                        <h5>Admin id</h5>
+                        <input type="text" class="input" name="id">
+                    </div>
+                </div>
+                <div class="input-div pass">
+                    <div class="i">
+                        <img class="icon" src="{% static '/images/lock.svg' %}" alt="">
+                    </div>
+                    <div class="div">
+                        <h5>Password</h5>
+                        <input type="password" class="input" name="password">
+                    </div>
+                </div>
+                <input type="submit" class="btn" value="Login">
+                <span class="back">back</span>
+            </form>
+            <!-- end of admin form -->
+        </div>
+    </div>
+
+    <script src="{% static 'js/login.js' %}"></script>
+</body>
+
+</html>

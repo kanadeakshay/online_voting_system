@@ -1,0 +1,255 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.outer{
+    width : 100vw;
+    min-height : 100vh;
+    display : flex;
+    justify-content : center;
+    padding: 10px;
+    background: #80808850;
+}
+.main{
+    width: 100%;
+    height : 100%;
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items : center;
+}
+/* info section */
+.info-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    /* background: red; */
+}
+.admin-info{
+    background: #fff;
+    border: 1px solid black;
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.admin-avatar{
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    border-radius: 50%;
+    margin: 10px;
+}
+.admin-name{
+    margin: 10px;
+    text-transform: capitalize;
+}
+.logout-btn{
+    margin: 10px;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: red;
+    color: white;
+    cursor: pointer;
+}
+.area-info{
+    background: white;
+    border-radius: 10px;
+    border: 1px solid black;
+    /* box-shadow: ; */
+    width: 100%;
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.area-info .left{
+    /* background: green; */
+    width: 100%;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.area-info .left .area-outline{
+    /* background: red; */
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    object-fit: fill;
+}
+.area-info .right{
+    /* background: blue; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.right h2, h4{
+    text-transform: capitalize;
+}
+.right h2{
+    margin-bottom: 1rem;
+}
+/* end of info section */
+
+/* hr line */
+.hr-line{
+    display: none;
+}
+/* end of hr line */
+
+/* new btn */
+.btns{
+    /* background: green; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.btns .btn{
+    padding: 15px 20px;
+    background: #4632C0;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    text-transform: capitalize;
+    margin: 10px;
+    cursor: pointer;
+}
+.btns .new-election-form button{
+    display: flex;
+    justify-content: center;
+}
+.btns .new-election-form svg{
+    margin-right: 5px;
+}
+/* end of new btn */
+
+/* all voters container */
+.all-voters-container{
+    /* background: aqua; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    /* margin-top: 5px; */
+}
+.title{
+    text-transform: capitalize;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-top: 5px;
+}
+.all-voters-table{
+    background: #C4C4C4;
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    /* padding: 10px; */
+    border-spacing: 0;
+    border: 1px solid black;
+}
+.all-voters-table tr th{
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+.all-voters-table tr td{
+    text-align: center;
+    padding: 10px;
+    background: white;
+    font-weight: bold;
+}
+/* all voters container */
+
+/* media query for desktop */
+@media only screen and (min-width: 786px){
+    .outer{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .main{
+        width: 70%;
+    }
+    /* info section */
+    .info-container{
+        width: 100%;
+        height: 40%;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .admin-info{
+        width: 40%;
+        height: 100%;
+    }
+    .admin-name{
+        font-size: 1.1rem;
+        text-align: center;
+    }
+    .logout-btn{
+        padding: 8px 20px;
+    }
+    .area-info{
+        margin: 0 20px 0 0;
+        width: 70%;
+        /* height: 215px; */
+        height: 100%;
+        flex-direction: row;
+        padding: 10px;
+    }
+    .area-info .left{
+        width: 50%;
+        margin-bottom: 0;
+    }
+    .area-info .right{
+        width: 50%;
+    }
+    /* end of info section */
+    
+    /* hr line */
+    .hr-line{
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: black;
+        margin: 20px;
+    }
+    /* end of hr line */
+
+    /* new btn */
+    .btns{
+        width: 100%;
+        flex-direction: row
+    }
+    /* end of new btn */
+
+    /* histroy container */
+    .all-voters-container{
+        width: 100%;
+    }
+    /* histroy container */
+}
+/* end of media query for desktop */

@@ -1,0 +1,134 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background: #C4C4C4;
+}
+.outer{
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+.main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.heading{
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(51, 51, 51);
+}
+.form-section{
+    /* background: green; */
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background: white;
+}
+form{
+    width: 100%;
+    /* background: green; */
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; */
+}
+form p{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+form label{
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #333;
+}
+form input{
+    padding: 5px;
+    font-size: 1.5rem;
+    margin-top: 8px;
+}
+.btns{
+    width: 100%;
+    /* background: red; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 10px;
+}
+.btn{
+    padding: 10px 20px;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.reset-btn{
+    background: rgb(59, 59, 59);
+    color: white;
+}
+.add-btn{
+    background: #1c19b1;
+    color: #ffffff;
+}
+
+.all-candidates{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.all-voters-container{
+    /* background: aqua; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    /* margin-top: 5px; */
+}
+table{
+    background: #C4C4C4;
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    /* padding: 10px; */
+    border-spacing: 0;
+    border: 1px solid black;
+}
+table tr th{
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+table tr td{
+    text-align: center;
+    padding: 10px;
+    background: white;
+    font-weight: bold;
+}
+
+@media screen and (min-width:768px){
+    .main{
+        width: 60%;
+    }
+}

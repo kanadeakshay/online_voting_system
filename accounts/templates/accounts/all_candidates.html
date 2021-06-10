@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Candidate</title>
+    <link rel="stylesheet" href="{% static 'css/all_candidates.css' %}">
+</head>
+
+<body>
+    <div class="outer">
+        <div class="main">
+            <div class="heading">Add candiate</div>
+            <div class="form-section">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <div class="btns">
+                        <input class="reset-btn btn" type="reset" value="Reset">
+                        <input class="add-btn btn" type="submit" value="Add">
+                    </div>
+                </form>
+            </div>
+            <div class="all-candidates">
+                <div class="heading">All candiate</div>
+                <table>
+                    <tr>
+                        <th>Candidate-id</th>
+                        <th>Candidate name</th>
+                        <th>Party name</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    {% for candidate in candidates %}
+                    <tr>
+                        <td>{{candidate.candidate_id}}</td>
+                        <td>{{candidate.name}}</td>
+                        <td>{{candidate.party_name}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

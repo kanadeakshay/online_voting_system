@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static '/css/dashboardAdmin.css' %}">
+</head>
+
+<body>
+    <div class="outer">
+        <div class="main">
+            <!-- info section -->
+            <div class="info-container">
+                <div class="area-info">
+                    <div class="left">
+                        <img src="{% static 'images/mumbai_outline.png' %}" alt="" class="area-outline">
+                    </div>
+                    <div class="right">
+                        <h2 class="area-name">{{admin.region.region_name}}</h2>
+                        <h4>Region id: {{admin.region.region_id}}</h4>
+                        <h4>Total no of voters: {{voters_count}}</h4>
+                        <!-- <h4>Female: 9000</h4> -->
+                    </div>
+                </div>
+                <div class="admin-info">
+                    <img src="{% static 'images/login_avatar.svg' %}" alt="" class="admin-avatar">
+                    <h2 class="admin-name">{{admin.name}}</h2>
+                    <a href="{% url 'login' %}"><button class="logout-btn">Log Out</button></a>
+                </div>
+            </div>
+            <!-- end of info section -->
+
+            <!-- hr line -->
+            <div class="hr-line"></div>
+            <!-- end of hr line -->
+
+            <!-- new section -->
+            <div class="btns">
+                <a href="{% url 'createNew' pk=admin.id %}">
+                    <button class="new-election-form btn">
+                        <svg width="20" height="20" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M20.4286 8.25H13.3571V1.5C13.3571 0.671719 12.6534 0 11.7857 0H10.2143C9.34656 0 8.64286 0.671719 8.64286 1.5V8.25H1.57143C0.703705 8.25 0 8.92172 0 9.75V11.25C0 12.0783 0.703705 12.75 1.57143 12.75H8.64286V19.5C8.64286 20.3283 9.34656 21 10.2143 21H11.7857C12.6534 21 13.3571 20.3283 13.3571 19.5V12.75H20.4286C21.2963 12.75 22 12.0783 22 11.25V9.75C22 8.92172 21.2963 8.25 20.4286 8.25Z"
+                                fill="white" />
+                        </svg>
+                        New Election
+                    </button>
+                </a>
+                <a href="{% url 'all_candidate' region_id=admin_region_id %}">
+                    <button class="add-candidate-form btn">
+                        All Candidates
+                    </button>
+                </a>
+                <a href="{% url 'winner' id=admin_region_id %}">
+                    <button class="add-candidate-form btn">
+                        Previous winners
+                    </button>
+                </a>
+            </div>
+            <!-- end of new section -->
+
+            <!-- all voters section -->
+            <div class="all-voters-container">
+                <h2 class="title">Voters list</h2>
+                <table class="all-voters-table">
+                    <tr>
+                        <th>Voter-id</th>
+                        <th>Voter name</th>
+                        <th>Gender</th>
+                        <th>Age</th>
+                    </tr>
+
+                    {% for voter in voters %}
+                    <tr>
+                        <td>{{voter.voter_id}}</td>
+                        <td>{{voter.name}}</td>
+                        <td>{{voter.gender}}</td>
+                        <td>{{voter.age}}</td>
+                    </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+            <!-- all voters section -->
+        </div>
+
+    </div>
+</body>
+
+</html>
